@@ -1,11 +1,11 @@
 import TodoItem from "@/components/TodoItem";
 
-const TodoList = ({ todosProps, setTodos }) => {
+const TodoList = ({ todosProps, setTodos, delTodo }) => {
 
     return (
         <ul>
             {todosProps.map((todo)=>(
-                <TodoItem key={todo.id} itemProp={todo} setTodos={setTodos} />
+                <TodoItem key={todo.id} itemProp={todo} setTodos={setTodos} delTodo={delTodo}/>
             ))}
         </ul>
     )

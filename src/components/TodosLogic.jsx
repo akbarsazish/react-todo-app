@@ -19,10 +19,18 @@ const TodosLogic = () => {
             completed: false,
          },
        ]);
+
+       const delTodo = (id) =>{
+         setTodos([
+          ...todos.filter((todo)=>{
+            return todo.id !== id;
+          })
+        ])
+       }
     return (
       <div>
         <InputTodo />
-        <TodoList key={todos.id} todosProps = {todos} setTodos={setTodos} />
+        <TodoList key={todos.id} todosProps = {todos} setTodos={setTodos} delTodo={delTodo}/>
         
     </div>
     )
