@@ -1,8 +1,8 @@
+import Header from "@/components/Header"
 const TodoApp = () => {
     return (
         <>
-            <h1>Hello Sazish</h1>
-            <p>I am a react developer </p>
+            <Header />
         </>
     )
 }
