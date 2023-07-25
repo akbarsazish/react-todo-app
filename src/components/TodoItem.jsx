@@ -1,3 +1,4 @@
+import styles from "@/components/styles/TodoItem.module.css"
 const TodoItem = ({ itemProp, setTodos, delTodo}) => {
   const handleChange = (id) => {
     setTodos((prevState) =>
@@ -14,12 +15,12 @@ const TodoItem = ({ itemProp, setTodos, delTodo}) => {
   };
 
   return (
-    <li>
-      <input type="checkbox" 
-      checked={itemProp.completed}
-      onChange={() => handleChange(itemProp.id)}/>
-      {itemProp.title}
-      <button onClick={() => delTodo(itemProp.id)}> Delete </button>
+    <li className={styles.item}>
+       <div className={styles.content}>
+          <input type="checkbox"  checked={itemProp.completed} onChange={() => handleChange(itemProp.id)}/>
+           {itemProp.title}
+          <button onClick={() => delTodo(itemProp.id)}> Delete </button>
+      </div>
     </li>
   );
   };
